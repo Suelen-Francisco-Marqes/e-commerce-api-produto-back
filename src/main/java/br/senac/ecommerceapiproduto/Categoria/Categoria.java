@@ -25,8 +25,9 @@ public class Categoria {
     @Size(max = 30, min = 1, message = "A descrição deve conter de 1 a 30 caracteres")
     private  String descricao;
 
+    @NotNull(message = "O campo não pode ser nulo")
     @Column(name = "STATUS")
-    private Status status;
+    private  Status status;
 
     public enum Status{
         ATIVO,

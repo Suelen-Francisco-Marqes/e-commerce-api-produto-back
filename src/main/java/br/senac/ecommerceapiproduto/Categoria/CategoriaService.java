@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 public class CategoriaService {
 
     private CategoriaRepository categoriaRepository;
-    public Categoria salvar(CategoriaRepresentation){
 
+    public Categoria salvar(CategoriaRepresentation.CreateCategoria createCategoria){
+        return  this.categoriaRepository.save(Categoria.builder()
+                .descricao(createCategoria.getDescricao())
+                .status(Categoria.Status.ATIVO)
+                .build());
     }
 }
