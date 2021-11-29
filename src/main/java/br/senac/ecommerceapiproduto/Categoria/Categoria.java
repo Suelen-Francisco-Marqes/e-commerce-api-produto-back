@@ -18,14 +18,14 @@ import java.util.UUID;
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    private Long id;
 
     @NotNull(message = "O campo não pode ser nulo")
     @Column(name = "DESCRICAO")
     @Size(max = 30, min = 1, message = "A descrição deve conter de 1 a 30 caracteres")
     private  String descricao;
 
-    @NotNull(message = "O campo não pode ser nulo")
+    @NotNull(message = "O campo status não pode ser nulo")
     @Column(name = "STATUS")
     private  Status status;
 
